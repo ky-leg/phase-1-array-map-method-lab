@@ -11,6 +11,22 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+/* 
 const titleCased = () => {
   return tutorials
 }
+*/
+const titleCased = () => {   
+  const newArray = tutorials.map(element => separateCapitalizeAndString(element)) 
+  return newArray 
+}
+
+
+// function that takes a string and separates it by spaces 
+function separateCapitalizeAndString(element){
+  const separatedLetters = element.split(" ");
+  const capitalizedWordsArray = separatedLetters.map(element => (element.charAt(0).toUpperCase() + element.slice(1)));
+  const capitalizedString = capitalizedWordsArray.join(' ');
+  return capitalizedString;
+}
+  
